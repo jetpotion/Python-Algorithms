@@ -4,7 +4,7 @@ def initial(low,high):
     if recursion(x) is True:
       counter += 1;
   return counter;
-
+//determine if the only prime factors are indeed 3 and 5
 def recursion(targetnumber):
   flag = True;
   currentnumber = targetnumber
