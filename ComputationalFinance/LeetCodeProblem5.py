@@ -1,6 +1,30 @@
 #A particularly hard problem to solve
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        #Suppose we have two arrays that are sorted
+        #l1 = [1,2,3]
+        #l2 = [4,5,6]
+        #L1 + L2 = [1,2,3,4,5,6]
+        #The median 3.5. 
+        #Notice that the index where 3,4 are located is basically the maximum of the left split. And the right split of the union of the 2 arryas
+        #Well this implies a good algorithm too use 
+        #We basically split the indexes of both arrays 2 parts each. First assume that 3 and 4 is where we can split off
+        #Then the left partitions [1,2,4] and right partition is [3,5,6]
+        #Then basically the the left partitions can be broken again on the median [1,2] and [2,4]
+        #The right partition is again brokn on the median [3,5] and [5,6]
+        #Notice that 2 and 5 were the medians  on their respected parition we use discard them but then maximum(1,3) is used. And then minimum [4,6] is used. 
+        #So averaging out (3,4) is 3.5
+        #The same idea applies when we add 2 sets and get odd numbers
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
      #Get the lenghts of the two arrays
         x = len(nums1)
         y = len(nums2)
