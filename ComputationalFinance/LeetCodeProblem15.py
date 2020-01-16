@@ -7,8 +7,6 @@ class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         if len(nums) < 3:
              return []
-        if len(nums) == 3 and sum(nums) == 0:
-            return [nums]
         if all(v == 0 for v in nums):
             return [[0,0,0]]
         dictionary = {}
@@ -24,6 +22,7 @@ class Solution:
                         complement  = 0 - totalsum
                         if complement in dictionary and dictionary[complement] != j and dictionary[complement] != h:
                             newlist = [nums[j],nums[h],complement]
+                            newlist.sort()
                             if(newlist not in currentlist):
                                 currentlist.append(newlist)
                     elif  nums[j] == 0 and nums[h] == 0:
@@ -32,13 +31,7 @@ class Solution:
                         complement  = 0 - totalsum
                         if complement in dictionary and dictionary[complement] != j and dictionary[complement] != h:
                             newlist = [nums[j],nums[h],complement]
+                            newlist.sort()
                             if(newlist not in currentlist):
                                 currentlist.append(newlist)
-        for x in currentlist:
-            x = x.sort()
-    
-        newlist = []
-        for x in currentlist:
-            if x not in newlist:
-                newlist.append(x)
-        return newlist
+        return currentlist
